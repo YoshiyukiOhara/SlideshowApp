@@ -12,6 +12,10 @@
 		929A786A21392321009FBBE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929A786821392321009FBBE7 /* Main.storyboard */; };
 		929A786C21392322009FBBE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929A786B21392322009FBBE7 /* Assets.xcassets */; };
 		929A786F21392322009FBBE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929A786D21392322009FBBE7 /* LaunchScreen.storyboard */; };
+		929A7877213A6C01009FBBE7 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A7876213A6C01009FBBE7 /* ResultViewController.swift */; };
+		929A7879213A7A3D009FBBE7 /* African lion 1080x1920.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 929A7878213A7A3D009FBBE7 /* African lion 1080x1920.jpg */; };
+		929A787B213A830A009FBBE7 /* vicuña 1080x1920.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 929A787A213A830A009FBBE7 /* vicuña 1080x1920.jpg */; };
+		929A787D213A831D009FBBE7 /* Ural owl 1080x1920.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 929A787C213A831C009FBBE7 /* Ural owl 1080x1920.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		929A786B21392322009FBBE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929A786E21392322009FBBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		929A787021392322009FBBE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		929A7876213A6C01009FBBE7 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		929A7878213A7A3D009FBBE7 /* African lion 1080x1920.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "African lion 1080x1920.jpg"; sourceTree = "<group>"; };
+		929A787A213A830A009FBBE7 /* vicuña 1080x1920.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "vicuña 1080x1920.jpg"; sourceTree = "<group>"; };
+		929A787C213A831C009FBBE7 /* Ural owl 1080x1920.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ural owl 1080x1920.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				929A786421392321009FBBE7 /* AppDelegate.swift */,
 				929A786621392321009FBBE7 /* ViewController.swift */,
+				929A7878213A7A3D009FBBE7 /* African lion 1080x1920.jpg */,
+				929A787A213A830A009FBBE7 /* vicuña 1080x1920.jpg */,
+				929A787C213A831C009FBBE7 /* Ural owl 1080x1920.jpg */,
+				929A7876213A6C01009FBBE7 /* ResultViewController.swift */,
 				929A786821392321009FBBE7 /* Main.storyboard */,
 				929A786B21392322009FBBE7 /* Assets.xcassets */,
 				929A786D21392322009FBBE7 /* LaunchScreen.storyboard */,
@@ -122,8 +134,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929A787D213A831D009FBBE7 /* Ural owl 1080x1920.jpg in Resources */,
+				929A7879213A7A3D009FBBE7 /* African lion 1080x1920.jpg in Resources */,
 				929A786F21392322009FBBE7 /* LaunchScreen.storyboard in Resources */,
 				929A786C21392322009FBBE7 /* Assets.xcassets in Resources */,
+				929A787B213A830A009FBBE7 /* vicuña 1080x1920.jpg in Resources */,
 				929A786A21392321009FBBE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +152,7 @@
 			files = (
 				929A786721392321009FBBE7 /* ViewController.swift in Sources */,
 				929A786521392321009FBBE7 /* AppDelegate.swift in Sources */,
+				929A7877213A6C01009FBBE7 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
