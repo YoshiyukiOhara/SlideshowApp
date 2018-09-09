@@ -59,24 +59,11 @@ class ViewController: UIViewController {
     
         let image = UIImage(named: "African lion 1080x1920.jpg")
         imageView.image = image
-        
-        playButton.setTitle("再生", for: .normal)
-        // 再生/停止ボタンの切り替え
-        playButton.addTarget(self, action: #selector(self.changeTitle(sender: )), for: .touchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // selector: #selector(self.changeTitle(sender: )) で指定された関数
-    @objc func changeTitle(sender: Any) {
-        if playButton.title(for: .normal) == "再生" {
-            playButton.setTitle("停止", for: .normal)
-        } else {
-            playButton.setTitle("再生", for: .normal)
-        }
     }
     
     @IBAction func nextImage(_ sender: Any) {
@@ -104,36 +91,47 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startSlideshow(_ sender: Any) {
-        //  再生/停止時の処理
-        switch playButton.title(for: .normal) {
-        case "再生":
-            //再生時
-            // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
-            if self.timer == nil {
+        // スライドショー再生
+        // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
+        if self.timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
-            }
-
-        default:
-            //停止時
-            if self.timer != nil {
-                self.timer.invalidate()   // 現在のタイマーを破棄する
-                self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
-            }
-        }
-        
-        // 進む/戻るボタンの有効化
-        if playButton.title(for: .normal) == "停止" {
-            nextButton.isEnabled = true
-            prevButton.isEnabled = true
-        } else {
+            
+            // ボタンの表示を停止に
+            playButton.setTitle("停止", for: .normal)
+            
+            // 進む/戻るボタンの無効化
             nextButton.isEnabled = false
             prevButton.isEnabled = false
+        } else {
+            // 停止
+            self.timer.invalidate()   // 現在のタイマーを破棄する
+            self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
+            
+            // ボタンの表示を再生に
+            playButton.setTitle("再生", for: .normal)
+            
+            // 進む/戻るボタンの有効化
+            nextButton.isEnabled = true
+            prevButton.isEnabled = true
         }
     }
     
     @IBAction func onTapImage(_ sender: Any) {
         // セグエを使用して画面を遷移
         performSegue(withIdentifier:"result", sender: nil)
+        
+        // スライドショー再生中なら停止
+        if self.timer != nil {
+            self.timer.invalidate()   // 現在のタイマーを破棄する
+            self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
+            
+            // ボタンの表示を再生に
+            playButton.setTitle("再生", for: .normal)
+            
+            // 進む/戻るボタンの有効化
+            nextButton.isEnabled = true
+            prevButton.isEnabled = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
